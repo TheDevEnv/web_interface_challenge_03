@@ -1,0 +1,163 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #16A085;
+  --card-color: #ffffff;
+  --black: #111111;
+  --grey-0: #c0bdb96e;
+  --grey-100: #989590;
+  --grey-200: #6B6565;
+}
+
+.container {
+  background-color: var(--bg-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.shadow {
+  box-shadow: 0px 7px 15px #00000059;
+}
+
+.card {
+  background-color: var(--card-color);
+  border-radius: 4px;
+  position: relative;
+  width: 600px;
+  height: 450px;
+  overflow: hidden;
+}
+
+.wrapper {
+  padding: 2rem 4rem;
+}
+
+.heading {
+  font-size: 1.5rem;
+  color: var(--black);
+  font-weight: 700;
+}
+
+.title {
+  font-size: 0.8rem;
+  color: var(--grey-100);
+  padding: 0.3rem 0 1.5rem 0;
+}
+
+.body {
+  font-size: 1rem;
+  color: var(--grey-200);
+  font-weight: 500;
+}
+
+.price {
+  font-size: 1.2rem;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-grey-200 {
+  color: var(--grey-200);
+}
+
+.icon-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-wrapper .icon {
+  z-index: 3;
+  position: absolute;
+  cursor: pointer;
+}
+
+.ripple {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.ripple::before {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--grey-100);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: var(--grey-0);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.7);
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+.icon-wrapper:hover .ripple::after {
+  transform: scale(1.05);
+}
+
+.thumbnail {
+  width: 100%;
+  position: relative;
+  top: -140px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .card {
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .wrapper {
+    padding: 1.5rem;
+  }
+
+  .card {
+    height: 400px;
+  }
+
+  .thumbnail {
+    top: -90px;
+  }
+}
